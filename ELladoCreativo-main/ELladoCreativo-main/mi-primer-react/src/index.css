@@ -1,0 +1,14 @@
+@import "tailwindcss";
+
+/* Reseteo básico para que el fondo ocupe toda la pantalla */
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background-color: #f1f5f9; /* Un gris muy claro de fondo */
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}

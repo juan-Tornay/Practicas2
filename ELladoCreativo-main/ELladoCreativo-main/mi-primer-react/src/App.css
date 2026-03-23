@@ -1,0 +1,75 @@
+/* 1. IMPORTACIÓN DE TAILWIND V4 */
+/* En la versión 4, esta única línea sustituye a las tres antiguas de @tailwind */
+@import "tailwindcss";
+
+/* 2. FUENTES Y CONFIGURACIÓN BASE */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --apple-blue: #2563eb;
+  --apple-bg: #fbfbfd;
+  --apple-text: #1d1d1f;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: var(--apple-bg);
+  color: var(--apple-text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+}
+
+/* 3. EFECTOS APPLE PREMIUM (Glassmorphism) */
+.glass-effect {
+  background-color: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+/* 4. COMPONENTES REUTILIZABLES (ESTILO FORMULARIOS) */
+/* Nota: Si el @apply te sigue dando problemas visuales en el editor, 
+   puedes usar estas clases directamente en el HTML de Home.jsx */
+.input-premium {
+  width: 100%;
+  background-color: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 1rem; /* rounded-2xl */
+  padding: 0.75rem 1rem;
+  color: #1d1d1f;
+  transition: all 0.2s ease;
+}
+
+.input-premium:focus {
+  outline: none;
+  border-color: transparent;
+  box-shadow: 0 0 0 2px #2563eb;
+}
+
+/* 5. PERSONALIZACIÓN DE SCROLLBAR */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #d1d5db;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--apple-blue);
+}
+
+/* 6. ANIMACIONES SUTILES PARA EL BENTO GRID */
+.bento-item {
+  transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.6s auto;
+}
+
+.bento-item:hover {
+  transform: scale(1.02);
+}
